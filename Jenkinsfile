@@ -7,17 +7,19 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh './jenkins/build.sh'
+        sh 'docker build -t todo-app:latest .'
+        sh 'docker build -t todo-mysql:latest ./database .'
       }
     }
     stage('Login') {
       steps {
-        sh './jenkins/login.sh'
+        sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
       }
     }
     stage('Push') {
       steps {
-        sh './jenkins/push.sh'
+        sh 'docker push pedrocortez/todo-app:latest'
+        sh 'docker push pedrocortez/todo-mysql:latest'
       }
     }
   }
