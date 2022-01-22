@@ -9,7 +9,12 @@ pipeline {
       steps {
         sh 'docker build -t pedrocortez/todo-app .'
         sh 'docker build . -t pedrocortez/todo-mysql -f database/Dockerfile'
+        }
       }
+    stage('test') {
+       steps {
+         sh 'python test.py'}
+
     }
     stage('Login') {
       steps {
