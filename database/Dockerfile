@@ -1,4 +1,4 @@
-FROM mysql:latest
+FROM mysql
 
 ENV MYSQL_DATABASE: todo_db
 ENV MYSQL_ROOT_PASSWORD: password
