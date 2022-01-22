@@ -11,13 +11,6 @@ pipeline {
         sh 'docker build . -t pedrocortez/todo-mysql -f database/Dockerfile'
         }
       }
-    stage('test PythonEnv') {
-        withPythonEnv('python3'){
-       steps {
-         sh 'python test.py'}
-        }
-      }
-
     stage('Login') {
       steps {
         sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
