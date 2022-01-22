@@ -1,6 +1,6 @@
 pipeline {
 
-  agent {docker { image 'python:3.7' 
+  agent { docker { image 'python:3.7' 
     }
  
   environment {
@@ -14,18 +14,19 @@ pipeline {
         }
       }
 
-    stage('test') {
+    stage('test env') {
         steps {
             sh 'python3 test.py'
         }
       }
-    stage('Login') {
-      steps {
-        sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
-      }
-    }
+    // stage('Login') {
+    //   steps {
+    //     sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+    //   }
+    // }
     stage('Push') {
       steps {
+        sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
         sh 'docker push pedrocortez/todo-app:latest'
         sh 'docker push pedrocortez/todo-mysql:latest'
       }
