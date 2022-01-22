@@ -1,11 +1,11 @@
-FROM mysql
+FROM --platform=linux/amd64 mysql
 
 ENV MYSQL_DATABASE: todo_db
 ENV MYSQL_ROOT_PASSWORD: password
 ENV MYSQL_USER: user
 ENV MYSQL_PASSWORD: password
 
-ADD todo.sql /docker-entrypoint-initdb.d
+ADD ./database/todo.sql /docker-entrypoint-initdb.d
 
 
 
