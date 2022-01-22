@@ -7,8 +7,8 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'docker build -t todo-app:latest .'
-        sh 'docker build . -t mysql-todo -f database/Dockerfile'
+        sh 'docker build -t pedrocortez/todo-app .'
+        sh 'docker build . -t pedrocortez/todo-mysql -f database/Dockerfile'
       }
     }
     stage('Login') {
