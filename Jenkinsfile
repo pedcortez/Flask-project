@@ -1,5 +1,5 @@
 pipeline {
-  agent { docker { image 'python:3.7.2' } }
+  agent any
  
   environment {
     DOCKERHUB_CREDENTIALS = credentials('pedro-dockerhub')
@@ -11,10 +11,11 @@ pipeline {
         sh 'docker build . -t pedrocortez/todo-mysql -f database/Dockerfile'
         }
       }
-    stage('test') {
+    stage('test PythonEnv') {
+        withPythonEnv('python3'){
        steps {
          sh 'python test.py'}
-
+    }
     }
     stage('Login') {
       steps {
