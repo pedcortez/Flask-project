@@ -1,5 +1,7 @@
 pipeline {
-  agent any
+
+  agent {docker { image 'python:3.7' 
+    }
  
   environment {
     DOCKERHUB_CREDENTIALS = credentials('pedro-dockerhub')
@@ -12,9 +14,9 @@ pipeline {
         }
       }
 
-    stage('test PythonEnv') {
-        withPythonEnv('python3'){
-            sh 'python test.py'
+    stage('test') {
+        steps {
+            sh 'python3 test.py'
         }
       }
     stage('Login') {
