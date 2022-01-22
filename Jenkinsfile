@@ -13,20 +13,14 @@ pipeline {
         }
       }
 
-    stage('test env') {
-        steps {
-            sh 'pip install flask flask_mysqldb '
-            sh 'python3 test.py'
-        }
       }
-    // stage('Login') {
-    //   steps {
-    //     sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
-    //   }
-    // }
-    stage('Push') {
+    stage('Test') {
       steps {
         sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+      }
+    }
+    stage('Push') {
+      steps {
         sh 'docker push pedrocortez/todo-app:latest'
         sh 'docker push pedrocortez/todo-mysql:latest'
       }
