@@ -10,7 +10,6 @@ To create a web application that integrates with a database and demonstrates CRU
 
 #### Technologies applied.
 Python, Flask, SQL, Docker, Docker-compose Jenkins and Azure.
->>>>>>> d31d9f3b3c536fd982ee4b6c6b3bc16ba7687a18
 
 ## A todo app, written in Flask and Python.
 
