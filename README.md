@@ -20,3 +20,6 @@ A user may add to todo task list, view all  the tasks they have to complete,if t
 
 #### COMPLETING AND DELETING THE TODO TASK
 ![tododelete](img/todo-delete.png)
+
+### JENKINS PIPELINE
+![PIPELINE](img/pipeine-pic.png)
