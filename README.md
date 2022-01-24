@@ -1,10 +1,10 @@
 # TODO APP - Final project DFE-Cloud2
 
-####Project Brief
+#### Project Brief
 
 To create a web application that integrates with a database and demonstrates CRUD functionality.- To utilise containers to host and deploy your application.- To create a continuous integration (CI)/continuous deployment (CD) pipeline that will automatically test, build and deploy your application
 
-####Technologies applied.
+#### Technologies applied.
 Python, Flask, SQL, Docker, Docker-compose Jenkins and Azure.
 
 ## A todo app, written in Flask and Python.
