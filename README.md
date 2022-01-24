@@ -8,7 +8,7 @@ To create a web application that integrates with a database and demonstrates CRU
 ![todoui](img/todo-app.png)
 
 ### Adding the ToDo list
+![todoADD](img/todo-add.png)
 
-#### Completing the ToDo task
-
-##### Deleting ToDo Task
+#### Completing and deleting the ToDo task
+![tododelete](img/todo-delete.png)
