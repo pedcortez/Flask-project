@@ -23,6 +23,11 @@ pipeline {
         sh 'docker push pedrocortez/todo-mysql:latest'
       }
     }
+    stage('Deploy') {
+      steps {
+        sh ./deploy.sh
+      }
+    }
   }
   post {
     always {
