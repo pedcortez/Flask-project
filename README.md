@@ -32,3 +32,8 @@ A user may add to todo task list, view all  the tasks they have to complete,if t
 
 ### JENKINS PIPELINE
 ![PIPELINE](img/pipeline-pic.png)
+
+### KUBERNETES
+Decided to challenge myself and deployed using kubernetes insted of swarm which is the most powerfull container orchestration tool .. 
+
+The project still in need o some improvements which I will be working through to get more experienced during my devops career .. 
