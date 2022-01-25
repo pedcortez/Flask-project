@@ -9,7 +9,6 @@ pipeline {
     stage('Build') {
       steps {
         sh 'docker build -t pedrocortez/todo-app .'
-        sh 'docker build . -t pedrocortez/todo-mysql -f database/Dockerfile'
         }
       }
 
